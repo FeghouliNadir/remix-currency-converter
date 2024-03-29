@@ -6,6 +6,8 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import styles from '~/styles/main.css';
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -14,6 +16,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'></link>
       </head>
       <body>
         {children}
@@ -26,4 +29,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return <Outlet />;
+}
+
+export function links() {
+  return [{rel: 'stylesheet', href: styles}]
 }
